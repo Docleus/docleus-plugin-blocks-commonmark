@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`a block type added without core changes > parses, renders and exports alongside CommonMark blocks 1`] = `
+"<h1 id="guide">Guide</h1>
+<aside data-tone="warn"><p>Careful:</p><ul><li>one</li><li class="task-list-item"><input type="checkbox" disabled checked> two</li></ul></aside>
+<table><thead><tr><th>a</th><th>b</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>"
+`;

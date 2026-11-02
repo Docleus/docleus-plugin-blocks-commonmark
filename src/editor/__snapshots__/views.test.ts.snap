@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`views > render a list item 1`] = `"<div class="commonmark-list-item"><div data-content=""></div></div>"`;
+
+exports[`views > render a task 1`] = `"<div class="commonmark-list-item" data-checked="true"><input type="checkbox" class="commonmark-task" aria-label="Done" contentEditable="false" checked=""/><div data-content=""></div></div>"`;
+
+exports[`views > render an image 1`] = `"<link rel="preload" as="image" href="a.png"/><img class="commonmark-image" src="a.png" alt="A" title="T"/>"`;
+
+exports[`views > render an unsafe image 1`] = `"<span class="commonmark-image-missing">A</span>"`;
+
+exports[`views > render code 1`] = `
+"<div class="commonmark-code" contentEditable="false"><input class="commonmark-code-lang" aria-label="Code language" placeholder="language" value="ts"/><textarea class="commonmark-code-value" aria-label="Code" spellCheck="false" rows="3">a
+b
+c</textarea></div>"
+`;
+
+exports[`views > render heading settings 1`] = `"<label>Heading level <select><option value="1">1</option><option value="2" selected="">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></label>"`;
+
+exports[`views > render image settings 1`] = `"<div class="commonmark-settings"><label>URL <input value="a.png"/></label><label>Alt text <input value=""/></label><label>Title <input value=""/></label></div>"`;
+
+exports[`views > render list settings 1`] = `"<div class="commonmark-settings"><label><input type="checkbox" checked=""/> Numbered</label><label>Start at <input type="number" min="0" value="3"/></label><label><input type="checkbox"/> Loose</label><label><input type="checkbox"/> Task list</label></div>"`;
+
+exports[`views > render table settings 1`] = `"<div class="commonmark-settings" role="group" aria-label="Table"><button type="button">Add row</button><button type="button" disabled="">Remove last row</button><button type="button">Add column</button><button type="button">Remove last column</button></div>"`;
+
+exports[`views > render table settings in a cell 1`] = `"<div class="commonmark-settings" role="group" aria-label="Table"><button type="button">Add row above</button><button type="button">Add row below</button><button type="button">Remove row</button><button type="button">Add column left</button><button type="button">Add column right</button><button type="button">Remove column</button></div>"`;
+
+exports[`views > render task list settings 1`] = `"<div class="commonmark-settings"><label><input type="checkbox" checked=""/> Numbered</label><label>Start at <input type="number" min="0" value="3"/></label><label><input type="checkbox"/> Loose</label><label><input type="checkbox" checked=""/> Task list</label></div>"`;

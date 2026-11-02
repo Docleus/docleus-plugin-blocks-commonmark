@@ -1,0 +1,75 @@
+{
+  "name": "@docleus/plugin-blocks-commonmark",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "CommonMark and GFM blocks for Docleus: headings, lists, task lists, quotes, code, images, tables and rules.",
+  "license": "MIT",
+  "packageManager": "pnpm@11.21.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "exports": {
+    "./shared": "./dist/shared/index.js",
+    "./server": "./dist/server/index.js",
+    "./editor": "./dist/editor/index.js",
+    "./docleus.plugin.json": "./docleus.plugin.json"
+  },
+  "files": [
+    "dist",
+    "docleus.plugin.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc -b tsconfig.json",
+    "lint": "oxlint -c node_modules/@docleus/config/oxlintrc.json src tests",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "deps": "depcruise src --config dependency-cruiser.cjs",
+    "license": "license-checker-rseidelsohn --summary --onlyAllow \"MIT;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC;0BSD;BlueOak-1.0.0;CC0-1.0;Python-2.0;CC-BY-3.0;(MIT AND CC-BY-3.0)\" --excludePrivatePackages --excludePackages \"lightningcss@1.33.0\"",
+    "test": "vitest run",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm deps && pnpm license && pnpm test"
+  },
+  "peerDependencies": {
+    "@docleus/sdk": "^0.0.1",
+    "react": "^19.3.1"
+  },
+  "dependencies": {
+    "mdast-util-gfm-table": "2.0.0",
+    "mdast-util-gfm-task-list-item": "2.0.0",
+    "micromark-extension-gfm-table": "2.1.2",
+    "micromark-extension-gfm-task-list-item": "2.1.0"
+  },
+  "devDependencies": {
+    "@docleus/config": "link:../docleus-core/packages/config",
+    "@docleus/core-blocks": "link:../docleus-core/packages/core-blocks",
+    "@docleus/core-markdown": "link:../docleus-core/packages/core-markdown",
+    "@docleus/core-render": "link:../docleus-core/packages/core-render",
+    "@docleus/kernel": "link:../docleus-core/packages/kernel",
+    "@docleus/sdk": "link:../docleus-core/packages/sdk",
+    "@docleus/testing": "link:../docleus-core/packages/testing",
+    "@types/mdast": "4.0.4",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "dependency-cruiser": "18.7.0",
+    "fast-check": "4.10.2",
+    "happy-dom": "21.0.4",
+    "license-checker-rseidelsohn": "5.0.1",
+    "oxlint": "1.89.0",
+    "prettier": "3.9.10",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tsdown": "0.23.1",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Docleus/docleus-plugin-blocks-commonmark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Docleus/docleus-plugin-blocks-commonmark/issues"
+  },
+  "homepage": "https://github.com/Docleus/docleus-plugin-blocks-commonmark#readme"
+}

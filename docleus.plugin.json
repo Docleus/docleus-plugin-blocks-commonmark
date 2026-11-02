@@ -1,0 +1,25 @@
+{
+  "name": "@docleus/plugin-blocks-commonmark",
+  "version": "0.0.1",
+  "engines": {
+    "docleus": "^0.0.1"
+  },
+  "entries": {
+    "shared": "./dist/shared/index.js",
+    "server": "./dist/server/index.js",
+    "editor": "./dist/editor/index.js"
+  },
+  "syntax": [
+    "heading",
+    "list",
+    "listItem",
+    "blockquote",
+    "code",
+    "table",
+    "tableRow",
+    "tableCell",
+    "thematicBreak",
+    "image",
+    "break"
+  ]
+}

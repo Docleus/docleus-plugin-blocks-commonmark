@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`render > renders blockquote 1`] = `"<blockquote><p>quote with <strong>bold</strong></p><ul><li>item</li></ul></blockquote>"`;
+
+exports[`render > renders code 1`] = `
+"<pre><code class="language-ts">const a = 1 &lt; 2;</code></pre>
+<pre><code>indented</code></pre>"
+`;
+
+exports[`render > renders hard break 1`] = `"<p>line one<br>line two</p>"`;
+
+exports[`render > renders headings 1`] = `
+"<h1 id="one">One</h1>
+<h2 id="two-em">Two <em>em</em></h2>
+<h6 id="six">Six</h6>"
+`;
+
+exports[`render > renders image 1`] = `"<p><img src="img.png" alt="alt &quot;text&quot;" title="Title"> and <img alt="x"></p>"`;
+
+exports[`render > renders link 1`] = `"<p><a href="https://example.com/?a=1&amp;b=2" title="t">a</a> <a>b</a></p>"`;
+
+exports[`render > renders loose list 1`] = `"<ol start="3"><li><p>a</p></li><li><p>b</p></li></ol>"`;
+
+exports[`render > renders raw 1`] = `"<pre data-raw-block>&lt;div onclick=&quot;x&quot;&gt;html&lt;/div&gt;</pre>"`;
+
+exports[`render > renders table 1`] = `"<table><thead><tr><th style="text-align: left">a</th><th style="text-align: center">b</th><th style="text-align: right">c</th></tr></thead><tbody><tr><td style="text-align: left">1</td><td style="text-align: center"><strong>2</strong></td><td style="text-align: right"><code>3</code></td></tr></tbody></table>"`;
+
+exports[`render > renders task list 1`] = `"<ul><li class="task-list-item"><input type="checkbox" disabled checked> done</li><li class="task-list-item"><input type="checkbox" disabled> todo</li><li>plain</li></ul>"`;
+
+exports[`render > renders thematic break 1`] = `
+"<p>a</p>
+<hr>
+<p>b</p>"
+`;
+
+exports[`render > renders tight list 1`] = `"<ul><li>a</li><li>b<ol><li>c</li><li>d</li></ol></li></ul>"`;
