@@ -1,6 +1,6 @@
 {
   "name": "@docleus/plugin-blocks-commonmark",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "type": "module",
   "description": "CommonMark and GFM blocks for Docleus: headings, lists, task lists, quotes, code, images, tables and rules.",
@@ -31,7 +31,7 @@
     "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm deps && pnpm license && pnpm test"
   },
   "peerDependencies": {
-    "@docleus/sdk": ">=0.0.1 <0.0.8",
+    "@docleus/sdk": ">=0.0.1 <0.0.9",
     "react": "^19.3.1"
   },
   "dependencies": {
