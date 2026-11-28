@@ -101,4 +101,4 @@ before 1.0.
 
 ## Compatibility
 
-Version `0.0.11` supports core and SDK `0.0.1` through `0.0.11` with matching `>=0.0.1 <0.0.12` manifest and SDK peer ranges. Install the complete distribution `0.0.13` for the repaired editing and export behavior.
+Version `0.0.11` supports core and SDK `0.0.11` with matching `>=0.0.11 <0.0.12` manifest and SDK peer ranges. It requires the repaired adjacent-list serializer in core 0.0.11. Install it with distribution `0.0.13`.
