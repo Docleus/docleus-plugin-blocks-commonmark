@@ -172,22 +172,6 @@ const table = fc
       ),
   );
 
-const isList = (node: BlockNode | undefined): boolean =>
-  node?.type === BLOCK_TYPES.list;
-
-/**
- * Two lists next to each other re-parse as one list when their markers
- * match. Imported documents never contain this, because the parser already
- * joined them.
- */
-function hasAdjacentLists(blocks: readonly BlockNode[]): boolean {
-  return blocks.some(
-    (current, i) =>
-      (isList(current) && isList(blocks[i + 1])) ||
-      hasAdjacentLists(current.content ?? []),
-  );
-}
-
 /**
  * In a tight item, children are printed without blank lines between them,
  * so only a paragraph followed by a block that can interrupt it survives.
@@ -282,7 +266,7 @@ const { flow } = fc.letrec<{
     ),
 }));
 
-const generated = flow.filter((node) => !hasAdjacentLists([node]));
+const generated = flow;
 
 // ROUND_TRIP_RUNS raises the run count for a deeper local search.
 const RUNS = Number(process.env.ROUND_TRIP_RUNS ?? 3000);
@@ -305,6 +289,32 @@ describe("commonmark round trip", { timeout: 120_000 }, () => {
       { numRuns: Math.ceil(RUNS / 3) },
     );
   });
+
+  it.each([0, 1, -1])(
+    "keeps independently edited adjacent lists (edit %s)",
+    (editedIndex) => {
+      const imported = service.parse("1. First\n\n9) Ninth\n");
+      const content = (imported.body.content ?? []).map((list, index) => {
+        if (editedIndex !== -1 && editedIndex !== index) return list;
+        return {
+          ...list,
+          content: list.content?.map((item) => ({
+            ...item,
+            content: item.content?.map((paragraph) => ({
+              ...paragraph,
+              inline: [{ type: "text", text: "Edited" }],
+            })),
+          })),
+        };
+      });
+      const changed = { ...imported, body: { ...imported.body, content } };
+      const reparsed = service.parse(service.serialize(changed));
+      expect(reparsed.body.content?.map((list) => list.attrs)).toEqual(
+        content.map((list) => list.attrs),
+      );
+      expect(reparsed.body.content).toHaveLength(2);
+    },
+  );
 
   const listSpreads = (blocks: readonly BlockNode[]): unknown[] =>
     blocks.flatMap((node) => [
