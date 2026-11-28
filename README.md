@@ -101,4 +101,4 @@ before 1.0.
 
 ## Compatibility
 
-Version `0.0.12` supports core and SDK `0.0.11` through `0.0.12` with matching `>=0.0.11 <0.0.13` manifest and SDK peer ranges. Install the complete distribution `0.0.14` for the repaired editing and export behavior.
+Version `0.0.12` supports core and SDK `0.0.12` with matching `>=0.0.12 <0.0.13` manifest and SDK peer ranges. Install the complete distribution `0.0.14` for the repaired editing and export behavior.
